@@ -1,0 +1,37 @@
+[
+  {
+    "id": "SEC-001",
+    "name": "Generic Secret / Password Assignment",
+    "pattern": "(?i)(password|passwd|secret|pwd|auth_token)\\s*=\\s*['\"]([^'\"]{4,})['\"]",
+    "severity": "HIGH",
+    "description": "Hardcoded credential assignment detected."
+  },
+  {
+    "id": "SEC-002",
+    "name": "Database Connection String",
+    "pattern": "(?i)(mongodb(\\+srv)?|postgresql|postgres|mysql|oracle|mssql)://[^\\s'\"]+",
+    "severity": "CRITICAL",
+    "description": "Database connection URI containing potentially embedded credentials."
+  },
+  {
+    "id": "SEC-003",
+    "name": "AWS Access Key ID",
+    "pattern": "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}",
+    "severity": "CRITICAL",
+    "description": "AWS Access Key ID pattern match."
+  },
+  {
+    "id": "SEC-004",
+    "name": "Generic API Key / Bearer Token",
+    "pattern": "(?i)(api[_-]?key|bearer|access[_-]?token)\\s*[:=]\\s*['\"]([a-zA-Z0-9_\\-\\.~]{16,})['\"]",
+    "severity": "HIGH",
+    "description": "API Key or Bearer Token format detected."
+  },
+  {
+    "id": "SEC-005",
+    "name": "Private Key Header",
+    "pattern": "-----BEGIN (RSA|EC|DSA|OPENSSH|PRIVATE) KEY-----",
+    "severity": "CRITICAL",
+    "description": "Unencrypted Private Key block found."
+  }
+]
