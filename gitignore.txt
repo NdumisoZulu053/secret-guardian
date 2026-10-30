@@ -1,0 +1,6 @@
+# Save this as .gitignore in the repo root
+__pycache__/
+*.pyc
+.vscode/
+venv/
+.env
